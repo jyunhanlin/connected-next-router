@@ -4,7 +4,7 @@
     "jsx": "react",
 		"target": "es5",
 		"module":"commonjs",
-    "outDir": "",
+    "outDir": "out",
 		"moduleResolution": "node",
 		"strict": true,
 		"removeComments": true,
@@ -12,5 +12,8 @@
 	},
 	"include": [
 		"src"
+	],
+	"exclude": [
+		"node_modules"
 	]
 }

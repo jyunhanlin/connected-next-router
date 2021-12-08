@@ -20,6 +20,8 @@
     "actions.d.ts",
     "ConnectedRouter.js",
     "ConnectedRouter.d.ts",
+    "immutable.js",
+    "immutable.d.ts",
     "index.js",
     "index.d.ts",
     "middleware.js",
@@ -37,8 +39,8 @@
   ],
   "scripts": {
     "build": "npm run build:cjs && npm run build:es",
-    "build:cjs": "tsc",
-    "build:es": "tsc --module esnext --outDir es",
+    "build:cjs": "tsc --project tsconfig.json",
+    "build:es": "tsc --project tsconfig.json --module esnext --outDir out/es",
     "instrument": "nyc instrument --compact=false src instrumented && tsc -p tsconfig.test.json --module esnext --outDir test-lib && rm -rf instrumented",
     "clean": "git clean -xdfe node_modules",
     "type-check": "tsc --noEmit",
@@ -51,10 +53,12 @@
     "cy:run": "cypress run"
   },
   "peerDependencies": {
-    "next": "^10.0.0",
-    "react": "^16.8.0 || ^17.0.0",
-    "react-redux": "^7.1.0",
-    "redux": "^3.6.0 || ^4.0.0"
+    "immutable": ">=3.8.2",
+    "next": ">=10.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": ">=7.1.0",
+    "redux": ">=4.0.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.8.3",
@@ -71,6 +75,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "immutable": "^3.8.2",
     "istanbul-lib-coverage": "^3.0.0",
     "istanbul-lib-instrument": "^4.0.3",
     "next": "^10.0.1",
