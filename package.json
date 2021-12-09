@@ -39,8 +39,8 @@
   ],
   "scripts": {
     "build": "npm run build:cjs && npm run build:es",
-    "build:cjs": "tsc --project tsconfig.json",
-    "build:es": "tsc --project tsconfig.json --module esnext --outDir out/es",
+    "build:cjs": "tsc",
+    "build:es": "tsc --module esnext --outDir out/es",
     "instrument": "nyc instrument --compact=false src instrumented && tsc -p tsconfig.test.json --module esnext --outDir test-lib && rm -rf instrumented",
     "clean": "git clean -xdfe node_modules",
     "type-check": "tsc --noEmit",
